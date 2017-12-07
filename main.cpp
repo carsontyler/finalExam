@@ -21,9 +21,9 @@ int main(int argc, char*argv[])
 	// Part III
 	cout<<"This is your House Analysis"<<endl;
 	houseMarketValues(hp);
-//
-//	// Part IV
-//	houseMarketPerState(hp);
+
+	// Part IV
+	houseMarketPerState(hp);
 
     return 0;
 }
