@@ -38,6 +38,7 @@ void readCSV(const string fileIn,vector<HousePrice>& hp)
     {
         cout << item << endl;
     }
+    cout << endl;
 }
 
 
@@ -49,7 +50,10 @@ void readCSV(const string fileIn,vector<HousePrice>& hp)
 void houseMarketValues(vector<HousePrice> &hp)
 {
     // Sort by Price
-
+    sort(hp.begin(), hp.end(), [](const HousePrice& lhs, const HousePrice rhs)
+        {return lhs.getPrice() < rhs.getPrice();});
+    cout << "Most Affordable Home: " << hp.front() << endl;
+    cout << "Most Enpensive Home: " << hp.back() << endl << endl;
 }
 
 
@@ -62,4 +66,6 @@ void houseMarketValues(vector<HousePrice> &hp)
 void houseMarketPerState(vector<HousePrice> &hp)
 {
     // Sort by State
+    sort(hp.begin(), hp.end(), [](const HousePrice& lhs, const HousePrice rhs)
+        {return lhs.getState() < rhs.getState();});
 }
